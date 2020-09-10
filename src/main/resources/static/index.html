@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>啦啦啦</p>
+</body>
+
+<script src="jquery-3.4.1.js"></script>
+<script>
+
+    $(function () {
+    
+    
+        var list = new Array();
+        list.push("1")
+        list.push("2")
+        list.push("3")
+        list.push("4")
+        list.push("5")
+        
+        for (var i in list){
+            let interval = initInterval(list[i]);
+        }
+    
+    })
+
+    initInterval = function (param) {
+        let result = "false";
+        $.ajax({
+            method:"post",
+            url:"../interval",
+            async:false,
+            headers:{
+                accept:"application/json;charset=utf-8"
+            },
+            data:{
+                param:param
+            },
+            success:function (data) {
+            
+            }
+        })
+        return result;
+    }
+
+</script>
+</html>

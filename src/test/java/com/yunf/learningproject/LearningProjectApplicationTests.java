@@ -11,14 +11,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 @SpringBootTest
 class LearningProjectApplicationTests {
 
 	@Autowired
 	Person person;
-
-
 
 	@Test
 	void contextLoads() throws ParseException {
@@ -32,6 +29,7 @@ class LearningProjectApplicationTests {
 //		reverse(-123);
 
 		commonTest();
+		//更新了
 
 	}
 
@@ -42,8 +40,8 @@ class LearningProjectApplicationTests {
 		string = string.substring(3);
 
 		List<String> list = new ArrayList<String>();
-		while(string.indexOf("|") != -1){
-			while(string.indexOf("$") != -1){
+		while(string.contains("|")){
+			while(string.contains("$")){
 				String subString = string.substring(string.indexOf("|")+1,string.indexOf("$"));
 				string = string.substring(string.indexOf("$")+1);
 				list.add(subString);
